@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Virtual Dressing Room</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@webxr-polyfill/webxr-polyfill.min.js"></script>
+</head>
+<body>
+    <h2>Virtual Dressing Room</h2>
+    <input type="file" id="upload-image" />
+    <button onclick="applyTryOn()">Try On</button>
+    <script>
+        function applyTryOn() {
+            let file = document.getElementById("upload-image").files[0];
+            let formData = new FormData();
+            formData.append("image", file);
+
+            fetch("http://127.0.0.1:5000/tryon", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message));
+        }
+    </script>
+</body>
+</html>
