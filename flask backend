@@ -1,0 +1,35 @@
+from flask import Flask, request, jsonify
+import cv2
+import numpy as np
+import torch
+from tryongan import TryOnGAN  # Assuming TryOnGAN is implemented
+from pose_estimation import detect_pose  # Pose detection function
+
+app = Flask(__name__)
+
+# Load pre-trained GAN model
+gan_model = TryOnGAN()
+
+@app.route('/tryon', methods=['POST'])
+def virtual_tryon():
+    user_image = request.files['user_image']
+    outfit_image = request.files['outfit_image']
+
+    # Read and process images
+    user_img = cv2.imdecode(np.frombuffer(user_image.read(), np.uint8), cv2.IMREAD_COLOR)
+    outfit_img = cv2.imdecode(np.frombuffer(outfit_image.read(), np.uint8), cv2.IMREAD_COLOR)
+
+    # Detect body pose & key points
+    keypoints = detect_pose(user_img)
+
+    # Generate virtual try-on image
+    tryon_img = gan_model.generate(user_img, outfit_img, keypoints)
+
+    # Save & return result
+    result_path = "static/output.jpg"
+    cv2.imwrite(result_path, tryon_img)
+
+    return jsonify({"status": "success", "output_url": result_path})
+
+if __name__ == '__main__':
+    app.run(debug=True)
