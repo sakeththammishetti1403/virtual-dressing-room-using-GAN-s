@@ -27,18 +27,23 @@ Image Processing	NumPy, PIL
 (Future Scope)	GANs for realistic fitting
 
 virtual-dressing-room/
-├── clothes/              # Sample clothes (PNG format with transparent background)
+│
+├── clothes/                 # Sample clothes (PNG format with transparent background)
 │   ├── tshirt1.png
 │   └── tshirt2.png
-├── static/               # Web interface static assets (CSS, JS, images)
+│
+├── static/                  # Web interface static assets (CSS, JS, images)
 │   └── style.css
-├── templates/            # HTML files for Flask app
+│
+├── templates/               # HTML files for Flask app
 │   └── index.html
-├── main.py               # Main script: webcam, pose detection, cloth overlay
-├── utils.py              # Helper functions
-├── app.py                # Flask app to run web interface
-├── requirements.txt      # Python dependencies
-└── README.md             # GitHub documentation
+│
+├── main.py                  # Main script: webcam, pose detection, cloth overlay
+├── utils.py                 # Helper functions for overlaying clothes
+├── app.py                   # Flask app to run optional web interface
+├── requirements.txt         # Python dependencies
+└── README.md                # Project documentation
+
 
 
 
