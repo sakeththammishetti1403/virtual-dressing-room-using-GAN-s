@@ -26,6 +26,7 @@ Image Processing	NumPy, PIL
 (Optional) Web Interface	Flask
 (Future Scope)	GANs for realistic fitting
 
+<pre>'''
 virtual-dressing-room/
 │
 ├── clothes/                 # Sample clothes (PNG format with transparent background)
@@ -44,7 +45,7 @@ virtual-dressing-room/
 ├── requirements.txt         # Python dependencies
 └── README.md                # Project documentation
 
-
+'''</pre>
 
 
 Future Enhancements
