@@ -28,13 +28,18 @@ Image Processing	NumPy, PIL
 
 virtual-dressing-room/
 ├── clothes/              # Sample clothes (PNG format with transparent background)
-├── static/               # Web interface static assets (if Flask used)
-├── templates/            # HTML files for web interface
-├── main.py               # Core logic: video capture, pose detection, overlay
-├── utils.py              # Helper functions for fitting and processing
-├── app.py                # Flask app (optional)
-├── README.md             # Project documentation
-└── requirements.txt      # Python dependencies
+│   ├── tshirt1.png
+│   └── tshirt2.png
+├── static/               # Web interface static assets (CSS, JS, images)
+│   └── style.css
+├── templates/            # HTML files for Flask app
+│   └── index.html
+├── main.py               # Main script: webcam, pose detection, cloth overlay
+├── utils.py              # Helper functions
+├── app.py                # Flask app to run web interface
+├── requirements.txt      # Python dependencies
+└── README.md             # GitHub documentation
+
 
 
 Future Enhancements
