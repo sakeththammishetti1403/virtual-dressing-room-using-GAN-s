@@ -1,59 +1,51 @@
-Virtual Dressing Room using GANs
-A real-time AI-based virtual dressing room that allows users to try on clothes virtually using webcam input. Built with Python, OpenCV, and MediaPipe, this project overlays selected clothing on the upper body using pose detection. Ideal for enhancing the online shopping experience and reducing return rates.
+### **Virtual Shirt Try-On Application**
 
-🚀 Features
-1 Real-Time Webcam Feed
-Capture and display live video from your webcam.
+**Description:**  
+This application provides a virtual experience where users can try on different shirts using real-time video captured from a webcam. It detects the user’s pose and hands, overlays shirt images onto the user's body based on shoulder positions, and allows for interaction through hand gestures.
 
-2 Pose Detection
-Uses MediaPipe to detect upper body keypoints like shoulders, neck, and chest.
+**Key Features:**
+- Real-time pose and hand detection using MediaPipe.
+- Overlay of shirt images on the user's body.
+- Gesture-based controls to switch shirts using virtual buttons.
+- Immediate visual feedback through real-time video processing.
 
-3 Virtual Try-On System
-Aligns and overlays selected clothes over the user's upper body in real-time.
+**Technologies Used:**
+- **OpenCV**: For video capture and image processing.
+- **MediaPipe**: For detecting body landmarks and hand gestures.
+- **NumPy**: For numerical operations and image processing.
+- **OS Module**: To load shirt images and interact with the file system.
 
-4 Dynamic Fitting
-Automatically adjusts the size and orientation of clothes to match user pose.
+**Installation Procedure:**
+1. Install required libraries:
+   ```bash
+   pip install opencv-python mediapipe numpy
+   ```
+2. Place the script, shirt images, and button images in the same directory.
+3. Modify the paths in the script if necessary.
 
-5 Optional Flask Web Interface
-A simple web UI to upload/select clothes and preview try-on.
+**How to Use:**
+1. Run the script with `python main.py`.
+2. Stand in front of the webcam, ensuring your upper body is visible.
+3. Use hand gestures to press virtual buttons to switch between shirts.
+4. Press `Esc` to exit.
 
-Tech Stack
-Component	Technology
-Programming Language	Python
-Computer Vision	OpenCV
-Pose Detection	MediaPipe
-Image Processing	NumPy, PIL
-(Optional) Web Interface	Flask
-(Future Scope)	GANs for realistic fitting
+**Future Enhancements:**
+- Add more clothing items like pants and jackets.
+- Improve gesture recognition and add new gesture-based controls.
+- Develop a user-friendly GUI and integrate mobile compatibility.
+- Connect with e-commerce platforms for a direct try-and-buy experience.
 
-<pre>'''
-virtual-dressing-room/
-│
-├── clothes/                 # Sample clothes (PNG format with transparent background)
-│   ├── tshirt1.png
-│   └── tshirt2.png
-│
-├── static/                  # Web interface static assets (CSS, JS, images)
-│   └── style.css
-│
-├── templates/               # HTML files for Flask app
-│   └── index.html
-│
-├── main.py                  # Main script: webcam, pose detection, cloth overlay
-├── utils.py                 # Helper functions for overlaying clothes
-├── app.py                   # Flask app to run optional web interface
-├── requirements.txt         # Python dependencies
-└── README.md                # Project documentation
+### **Advantages of Virtual Try-On for Online Shopping:**
+- **Enhanced Experience**: Allows customers to see how clothes look on them, increasing engagement and satisfaction.
+- **Increased Confidence and Reduced Returns**: Better visualization leads to informed purchasing decisions, reducing return rates.
+- **Convenience**: Try on clothes from anywhere, anytime, without the need for physical stores.
+- **Personalization**: AI can recommend clothes based on body shape and past preferences.
+- **Safety and Hygiene**: Eliminates physical contact with garments, ensuring a safer shopping environment.
 
-'''</pre>
+### **Advantages Over Offline Shopping:**
+- **Greater Accessibility**: Shop and try on clothes from any location.
+- **Broader Selection**: Access to a wider range of styles and sizes than typically available in physical stores.
+- **No Waiting**: Immediate try-on experience without fitting room queues.
+- **Social Sharing**: Easily share looks with friends for feedback through social media.
 
-
-Future Enhancements
-1 Integrate GANs for realistic cloth warping and texture mapping
-
-2 Support for lower body garments
-
-3 Save try-on snapshots and share with friends
-
-4 AR-based virtual trial using depth sensors (e.g., Kinect, iPhone TrueDepth)
-
+Implementing this virtual try-on application can significantly enhance the online shopping experience, making it more interactive, personalized, and user-friendly compared to traditional offline shopping.
